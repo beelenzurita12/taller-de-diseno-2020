@@ -1,0 +1,2 @@
+rootProject.name='taller-de-diseno-2020'
+include ':app'
