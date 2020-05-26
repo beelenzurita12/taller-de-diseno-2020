@@ -1,4 +1,14 @@
 <resources>
-<string name="app_name">taller-de-diseno-2020</string>
+<string name="app_name">Mercado Libre</string>
 <string name="search_hint">Buscar en Mercado Libre</string>
+<string name="more">Más</string>
+<string name="menu">Menú</string>
+<string name="search_action">Buscar</string>
+<string name="no_internet">No hay conexión</string>
+<string name="resource_not_found">No se encontro el recurso</string>
+<string name="server_error">Ocurrio un error en el servidor</string>
+<string name="bad_request">Su solicitud fue incorrecta</string>
+<string name="unknown_error">Error desconocido</string>
+<string name="results">Resultados</string>
+ <string name="not_found">No se encontraron resultados</string>
 </resources>
