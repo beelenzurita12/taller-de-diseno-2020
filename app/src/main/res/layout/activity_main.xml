@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/mainContainer"
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff159">
+        android:background="#fff159"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/menu"
@@ -27,11 +28,11 @@
             android:id="@+id/searchText"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            app:boxBackgroundColor="#fff"
             android:hint="@string/search_hint"
+            app:boxBackgroundColor="#fff"
             app:boxCornerRadiusBottomEnd="20dp"
             app:boxCornerRadiusBottomStart="20dp"
             app:boxCornerRadiusTopEnd="20dp"
@@ -53,7 +54,7 @@
             android:layout_marginBottom="10dp"
             android:background="@null"
             android:contentDescription="@string/menu"
-            android:src="@drawable/ic_shopping" />
+            android:src="@drawable/ic_suoermercado" />
 
     </LinearLayout>
 
@@ -61,16 +62,31 @@
         android:id="@+id/searchAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="150dp"
-        android:text="@string/search_action" />
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="168dp"
+        android:text="@string/search_action"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/resultsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
         android:text="@string/results"
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="10dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToProductButton" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/goToProductButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/goToProductButton"
+        app:layout_constraintEnd_toEndOf="@+id/searchAction"
+        app:layout_constraintStart_toStartOf="@+id/searchAction"
+        app:layout_constraintTop_toBottomOf="@+id/searchAction" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

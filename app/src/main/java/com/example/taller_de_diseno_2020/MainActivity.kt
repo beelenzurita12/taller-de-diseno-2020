@@ -19,6 +19,7 @@
             setContentView(R.layout.activity_main)
 
             searchAction.setOnClickListener { search(searchText.editText?.text.toString()) }
+            goToProductButton.setOnClickListener{ goToProductButton()}
         }
 
         private fun search(q:String){
@@ -76,5 +77,9 @@
                 )
                     .show()
             }
+        }
+
+        private fun goToProductButton(){
+            setContentView(R.layout.activity_product)
         }
     }
