@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Mercado Libre</string>
     <string name="search_hint">Buscar en Mercado Libre</string>
+    <string name="currency"><b>%1$.2f %2$s</b></string>
     <string name="more">Más</string>
     <string name="menu">Menú</string>
     <string name="search_action">Buscar</string>

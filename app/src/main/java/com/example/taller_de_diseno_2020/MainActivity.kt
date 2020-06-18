@@ -1,9 +1,13 @@
     package com.example.taller_de_diseno_2020
 
+    import android.content.Intent
     import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
     import android.widget.Toast
+    import androidx.recyclerview.widget.LinearLayoutManager
+    import com.example.taller_de_diseno_2020.adapters.ProductAdapter
     import com.example.taller_de_diseno_2020.api.Api
+    import com.example.taller_de_diseno_2020.entity.MeliSearchResult
     import com.example.taller_de_diseno_2020.entity.SearchResult
     import kotlinx.android.synthetic.main.activity_main.*
     import com.example.taller_de_diseno_2020.utils.hideKeyboard
@@ -14,28 +18,33 @@
 
     class MainActivity : AppCompatActivity() {
 
+        private var adapter = ProductAdapter()
+        private lateinit var currentSearch: ArrayList<MeliSearchResult>
+
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
 
             searchAction.setOnClickListener { search(searchText.editText?.text.toString()) }
-            goToProductButton.setOnClickListener{ goToProductButton()}
+
+            productsList.layoutManager = LinearLayoutManager(this)
+            productsList.adapter = adapter
         }
 
         private fun search(q:String){
             hideKeyboard()
             Api().search(q, object : Callback<SearchResult> {
 
-
                 override fun onFailure(call: Call<SearchResult>, t: Throwable) {
                     Snackbar.make(mainContainer, R.string.no_internet, Snackbar.LENGTH_LONG).show()
-                    //toggleLoading()
                 }
 
-                override fun onResponse(call: Call<SearchResult>, response: Response<SearchResult>) {
-
+                override fun onResponse(call: Call<SearchResult>, response: Response<SearchResult>) =
                     when (response.code()) {
-                        in 200..299 -> setResultValues(response.body()!!)
+                        in 200..299 -> {
+                            currentSearch = response.body()?.results!!
+                            setResultValues(response.body()!!)
+                        }
                         404 -> Toast.makeText(
                             this@MainActivity,
                             R.string.resource_not_found,
@@ -61,15 +70,16 @@
                         )
                             .show()
                     }
+            })
+        }
 
-                    //toggleLoading(response.isSuccessful)
-            }
-        })
-    }
         private fun setResultValues(body: SearchResult){
             if (body.results.isNotEmpty()) {
-                 resultsText.text = body.toString()
+                 adapter.productList = body.results
+                 adapter.stringSearch = searchText.editText?.text.toString()
                 } else {
+                adapter.productList = ArrayList()
+
                 Toast.makeText(
                     this@MainActivity,
                     R.string.not_found,
@@ -77,9 +87,7 @@
                 )
                     .show()
             }
-        }
 
-        private fun goToProductButton(){
-            setContentView(R.layout.activity_product)
+            adapter.notifyDataSetChanged()
         }
     }

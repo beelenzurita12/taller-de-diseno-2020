@@ -94,40 +94,37 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_anchor="@+id/linearLayout"
-        app:layout_anchorGravity="bottom|center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ubication">
 
         <ImageView
             android:id="@+id/imageProduct"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:src="@drawable/patines"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-        android:id="@+id/conditionProduct"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/imageProduct"
-        android:text="@string/conditionProduct"
-        android:layout_marginLeft="18dp"/>
+            android:id="@+id/conditionProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/conditionProduct"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct" />
 
         <TextView
             android:id="@+id/titleProduct"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/conditionProduct"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
             android:layout_marginTop="8dp"
             android:textSize="24dp"
             android:text="@string/titleProduct"/>
@@ -136,6 +133,7 @@
             android:id="@+id/opinionsProducts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleProduct"
             android:layout_marginTop="5dp"
             tools:ignore="MissingConstraints">
@@ -143,7 +141,6 @@
             <ImageButton
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginLeft="18dp"
                 android:src="@drawable/ic_star"
                 android:layout_marginRight="10dp"
                 android:background="@null"/>
@@ -186,9 +183,10 @@
         <TextView
             android:id="@+id/priceProduct"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/opinionsProducts"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="18dp"
@@ -199,8 +197,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginLeft="18dp"
             android:text="@string/buyButton"
             android:textAllCaps="false"
             android:textSize="18dp"
@@ -212,8 +208,6 @@
             app:strokeColor="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="18dp"
-            android:layout_marginLeft="18dp"
             android:layout_marginBottom="20dp"
             android:text="@string/addToShoppingKart"
             android:textAllCaps="false"
@@ -232,11 +226,12 @@
         <TextView
             android:id="@+id/titleCharacteristicsProduct"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:text="@string/titleCharacteristicsProduct"
             android:textSize="16dp"
             android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addToShoppingKart"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="18dp" />
@@ -244,9 +239,10 @@
         <TextView
             android:id="@+id/characteristicsProduct"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/characteristicsProduct"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleCharacteristicsProduct"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="18dp" />
@@ -262,22 +258,21 @@
         <TextView
             android:id="@+id/titleDescriptionProduct"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
+            android:layout_height="wrap_content"
             android:text="@string/titleDescriptionProduct"
             android:textSize="16dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/characteristicsProduct"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="18dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristicsProduct" />
 
         <TextView
             android:id="@+id/descriptionProduct"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/descriptionProduct"
             app:layout_constraintTop_toBottomOf="@id/titleDescriptionProduct"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="18dp" />
 

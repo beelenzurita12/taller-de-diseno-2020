@@ -62,7 +62,7 @@
         android:id="@+id/searchAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="168dp"
         android:text="@string/search_action"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,23 +70,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <TextView
-        android:id="@+id/resultsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/results"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productsList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToProductButton" />
+        app:layout_constraintTop_toBottomOf="@+id/searchAction"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_product"/>
 
-    <Button
-        android:id="@+id/goToProductButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/goToProductButton"
-        app:layout_constraintEnd_toEndOf="@+id/searchAction"
-        app:layout_constraintStart_toStartOf="@+id/searchAction"
-        app:layout_constraintTop_toBottomOf="@+id/searchAction" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
