@@ -14,15 +14,12 @@
     <string name="results">Resultados: </string>
     <string name="not_found">No se encontraron resultados</string>
     <string name="product">Producto</string>
-    <string name="userUbication">Enviar a Maria Belen Zurita - Garibaldi 3203 ></string>
+    <string name="userUbication">Enviar a Maria Belen Zurita - Garibaldi 3205 ></string>
     <string name="conditionProduct">Nuevo - 1258 vendidos</string>
-    <string name="titleProduct">Patin artistico de bota profesional extensible</string>
-    <string name="opinionsProduct">0 opiniones</string>
-    <string name="priceProduct">$ 8.999</string>
+    <string name="opinionsProduct">10 opiniones</string>
     <string name="buyButton">Comprar</string>
     <string name="addToShoppingKart">Agregar al carrito</string>
     <string name="titleCharacteristicsProduct">Características</string>
-    <string name="characteristicsProduct">Marca: Powerblade</string>
     <string name="titleDescriptionProduct">Descripción</string>
-    <string name="descriptionProduct">del IMPORTADOR DIRECTO al consumidor. Íntegramente Forrados por Material soft para dar suavidad al contacto con el pie. Costuras reforzadas y remaches metálicos para evitar roturas. INCLUYE ALFORJA (FOTO) MIDA SU PIE al momento de realizar el pedido, así no hay margen de error en función de la horma importada</string>
+    <string name="product_price">$ <b>%1$.2f %2$s</b></string>
 </resources>

@@ -34,10 +34,17 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         productList[position].let { product ->
                 holder.itemView.productTitle.text = product.title
-                holder.itemView.productPrice.text = product.price.toString()
+                holder.itemView.productPrice.text =
+                    holder.itemView.context.getString(
+                        R.string.product_price,
+                        product.price,
+                        ""
+                    )
 
                 Picasso.get()
-                    .load(product.thumbnail)
+                    .load(product.thumbnail.replace(
+                        "http",
+                        "https"))
                     .placeholder(R.drawable.ic_loading)
                     .error(R.drawable.ic_error_outline_black_24dp)
                     .into(holder.itemView.thumbNail)

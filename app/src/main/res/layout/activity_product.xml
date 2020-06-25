@@ -126,8 +126,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/conditionProduct"
             android:layout_marginTop="8dp"
-            android:textSize="24dp"
-            android:text="@string/titleProduct"/>
+            android:textSize="24dp"/>
 
         <LinearLayout
             android:id="@+id/opinionsProducts"
@@ -189,8 +188,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/opinionsProducts"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="18dp"
-            android:text="@string/priceProduct"/>
+            tools:layout_editor_absoluteX="18dp"/>
 
         <Button
             android:id="@+id/buyButton"
@@ -215,46 +213,6 @@
             app:layout_constraintTop_toBottomOf="@id/buyButton"
             tools:layout_editor_absoluteX="18dp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:background="#8E8B8B"
-            app:layout_constraintTop_toBottomOf="@id/addToShoppingKart" />
-
-        <TextView
-            android:id="@+id/titleCharacteristicsProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="@string/titleCharacteristicsProduct"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addToShoppingKart"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="18dp" />
-
-        <TextView
-            android:id="@+id/characteristicsProduct"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@string/characteristicsProduct"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titleCharacteristicsProduct"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="18dp" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:background="#8E8B8B"
-            app:layout_constraintTop_toBottomOf="@id/characteristicsProduct" />
-
         <TextView
             android:id="@+id/titleDescriptionProduct"
             android:layout_width="wrap_content"
@@ -263,14 +221,13 @@
             android:textSize="16dp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/characteristicsProduct" />
+            app:layout_constraintTop_toBottomOf="@id/addToShoppingKart" />
 
         <TextView
             android:id="@+id/descriptionProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="@string/descriptionProduct"
             app:layout_constraintTop_toBottomOf="@id/titleDescriptionProduct"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"

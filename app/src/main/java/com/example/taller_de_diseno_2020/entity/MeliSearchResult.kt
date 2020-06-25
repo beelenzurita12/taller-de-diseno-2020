@@ -14,7 +14,4 @@ data class MeliSearchResult (
     @SerializedName("condition") val condition : String,
     @SerializedName("permalink") val permalink : String,
     @SerializedName("thumbnail") val thumbnail : String
-    //@SerializedName("address") val address : Address,
-    //@SerializedName("category_id") val categoryId : String
-    //@SerializedName("tags") val tags : Array
     )
