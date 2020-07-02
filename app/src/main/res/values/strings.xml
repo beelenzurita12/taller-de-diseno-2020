@@ -5,8 +5,10 @@
     <string name="more">Más</string>
     <string name="menu">Menú</string>
     <string name="search_action">Buscar</string>
+    <string name="loading">Cargando</string>
     <string name="goToProductButton">Vista de producto</string>
-    <string name="no_internet">No hay conexión</string>
+    <string name="no_internet">No hay conexión a internet</string>
+    <string name="error">Ocurrió un error</string>
     <string name="resource_not_found">No se encontro el recurso</string>
     <string name="server_error">Ocurrio un error en el servidor</string>
     <string name="bad_request">Su solicitud fue incorrecta</string>
@@ -15,11 +17,13 @@
     <string name="not_found">No se encontraron resultados</string>
     <string name="product">Producto</string>
     <string name="userUbication">Enviar a Maria Belen Zurita - Garibaldi 3205 ></string>
-    <string name="conditionProduct">Nuevo - 1258 vendidos</string>
+    <string name="conditionProduct">%1$s - %2$d vendidos</string>
     <string name="opinionsProduct">10 opiniones</string>
     <string name="buyButton">Comprar</string>
     <string name="addToShoppingKart">Agregar al carrito</string>
     <string name="titleCharacteristicsProduct">Características</string>
     <string name="titleDescriptionProduct">Descripción</string>
     <string name="product_price">$ <b>%1$.2f %2$s</b></string>
+    <string name="not_implemented">No implementado</string>
+
 </resources>

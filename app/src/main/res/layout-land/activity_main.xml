@@ -27,7 +27,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/searchText"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="300dp"
+            android:layout_width="500dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
@@ -42,20 +42,27 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#050505"
                 android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageButton
-            android:id="@+id/market"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@null"
-            android:contentDescription="@string/menu"
-            android:src="@drawable/ic_suoermercado" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/market"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:contentDescription="@string/menu"
+                android:src="@drawable/ic_suoermercado"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
 
     </LinearLayout>
 

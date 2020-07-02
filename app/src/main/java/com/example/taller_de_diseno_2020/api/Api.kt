@@ -21,7 +21,7 @@ class Api {
     }
 
     fun search(q: String, callback: Callback<SearchResult>) {
-        getApi().search(q.replace(" ", "+")).enqueue(callback)
+        getApi().search(q.replace(" ", "")).enqueue(callback)
     }
 
     fun getItemById(itemId: String, callback: Callback<Item>) {

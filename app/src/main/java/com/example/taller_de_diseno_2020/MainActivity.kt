@@ -1,47 +1,80 @@
     package com.example.taller_de_diseno_2020
 
-    import android.content.Intent
+    import android.content.Context
+    import android.net.ConnectivityManager
+    import android.net.NetworkInfo
     import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
     import android.widget.Toast
+    import androidx.core.view.isVisible
     import androidx.recyclerview.widget.LinearLayoutManager
     import com.example.taller_de_diseno_2020.adapters.ProductAdapter
     import com.example.taller_de_diseno_2020.api.Api
     import com.example.taller_de_diseno_2020.entity.MeliSearchResult
     import com.example.taller_de_diseno_2020.entity.SearchResult
+    import com.example.taller_de_diseno_2020.utils.notImplementedButton
     import kotlinx.android.synthetic.main.activity_main.*
     import com.example.taller_de_diseno_2020.utils.hideKeyboard
-    import com.google.android.material.snackbar.Snackbar
     import retrofit2.Call
     import retrofit2.Callback
     import retrofit2.Response
 
     class MainActivity : AppCompatActivity() {
 
-        private var adapter = ProductAdapter()
+        var adapter = ProductAdapter()
         private lateinit var currentSearch: ArrayList<MeliSearchResult>
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
 
-            searchAction.setOnClickListener { search(searchText.editText?.text.toString()) }
+            notImplementedButtonsInView()
+
+            searchAction.setOnClickListener {
+                pBar.isVisible = true
+                search(searchText.editText?.text.toString())
+            }
 
             productsList.layoutManager = LinearLayoutManager(this)
             productsList.adapter = adapter
+
+            isOnline()
+        }
+
+        override fun onResume() {
+            super.onResume()
+            isOnline()
+        }
+
+        override fun onPause() {
+            super.onPause()
+            isOnline()
+        }
+
+        private fun isOnline(){
+            val cm = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val activeNetwork: NetworkInfo? = cm.activeNetworkInfo
+            val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
+
+            if(!isConnected){
+                Toast.makeText(this@MainActivity, R.string.no_internet, Toast.LENGTH_LONG).show()
+            }
         }
 
         private fun search(q:String){
             hideKeyboard()
+
             Api().search(q, object : Callback<SearchResult> {
 
                 override fun onFailure(call: Call<SearchResult>, t: Throwable) {
-                    Snackbar.make(mainContainer, R.string.no_internet, Snackbar.LENGTH_LONG).show()
+                    pBar.isVisible = false
+                    Toast.makeText(this@MainActivity, R.string.error, Toast.LENGTH_LONG).show()
                 }
 
                 override fun onResponse(call: Call<SearchResult>, response: Response<SearchResult>) =
                     when (response.code()) {
                         in 200..299 -> {
+                            pBar.isVisible = false
                             currentSearch = response.body()?.results!!
                             setResultValues(response.body()!!)
                         }
@@ -89,5 +122,15 @@
             }
 
             adapter.notifyDataSetChanged()
+        }
+
+        private fun notImplementedButtonsInView(){
+            menu.setOnClickListener{
+                notImplementedButton(this)
+            }
+
+            market.setOnClickListener{
+                notImplementedButton(this)
+            }
         }
     }
